@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/web/css/bootstrap.css" />
+		<style type="text/css">
+			.avatar {
+				width: 30px;
+			}
+
+			.list-group-item {
+				display: flex;
+			}
+
+			.list-group-item p {
+				flex: 4;
+				margin-bottom: 0;
+			}
+
+			.list-group-item p .delete_btn {
+				cursor: pointer;
+			}
+			
+			.userfile{
+				width: 150px;
+				height: 150px;
+			}
+			.userfile img{
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="head">
+			<div class="container">
+				<div class="row">
+					<div class="leftimg col-lg-6 ">
+						<img src="../images/logo.png" alt="">
+					</div>
+					<div class="rightimg col-lg-6 text-right">
+						<img src="../images/text.png" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="user">
+			<div class="container">
+				<div class="row">
+					<div id="user">
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 相册模块 -->
+		<div class="files">
+			<div class="container">
+				<div class="row">
+					<div>
+						<!-- Nav tabs -->
+						<ul class="nav nav-tabs" role="tablist">
+							<li role="presentation"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">全部用户</a></li>
+							<li role="presentation" class="active"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">我的相册</a></li>
+							<li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">管理相册</a></li>
+							<li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">修改信息</a></li>
+						</ul>
+						<!-- Tab panes -->
+						<div class="tab-content">
+							<!-- 全部用户 -->
+							<div role="tabpanel" class="tab-pane" id="home"></div>
+							<!-- 我的相册 -->
+							<div role="tabpanel" class="tab-pane active" id="profile">
+								<!-- 0 -->
+								<div class="panel panel-default">
+									<div class="panel-body text-center">
+										<!-- 1 -->
+										<ul class="list-group" id="userfile_list">
+										  <!-- 文件夹部分 -->
+										</ul>
+									</div>
+								</div>
+							</div>
+							<!-- 管理相册 -->
+							<div role="tabpanel" class="tab-pane" id="messages">
+								<!-- 0 -->
+								<div class="panel panel-default">
+									<div class="panel-body">
+										<!-- 1 -->
+										<div class="panel panel-default">
+											<div class="panel-heading">添加相册</div>
+											<div class="panel-body">
+												<!-- 2 -->
+												<div class="row">
+													<div class="col-lg-12">
+														<div class="input-group">
+															<input type="text" class="form-control" id="Album_name" placeholder="输入要创建的相册名称">
+															<span class="input-group-btn">
+																<button class="btn btn-default" type="button" id="create_btn">添加</button>
+															</span>
+														</div><!-- /input-group -->
+													</div><!-- /.col-lg-6 -->
+												</div><!-- /.row -->
+											</div>
+										</div>
+										<!-- 1 -->
+										<div class="panel panel-default">
+											<div class="panel-heading">管理相册</div>
+											<div class="panel-body text-center" id="manageAlbum">
+												<!-- 2 -->
+												<ul class="list-group">
+													<!-- 3 -->
+													<li class="list-group-item">
+														<p><span>名称</span></p>
+														<p><span>共享</span></p>
+														<p><span>删除</span></p>
+													</li>
+												</ul>
+												<ul class="list-group" id="album_list">
+													<!-- 3 -->
+
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- 修改信息 -->
+							<div role="tabpanel" class="tab-pane" id="settings"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 模态框 -->
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">提示</h4>
+					</div>
+					<div class="modal-body" id="myModal_html">
+						"显示内容"
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<!-- 	        <button type="button" class="btn btn-primary">Save changes</button> -->
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="/web/sea.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/web/js/jQuery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/web/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			// 模块化开发,使用sea.js
+			seajs.use("/web/modules/index/main.js");
+		</script>
+	</body>
+</html>
